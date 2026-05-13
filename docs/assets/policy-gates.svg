@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Agent policy gates</title>
+  <desc id="desc">Secure Agent actions are auto-allowed, approval-required, or blocked before they reach implementation.</desc>
+  <rect width="1200" height="460" fill="#fbfcfd"/>
+  <style>
+    .h{font:700 34px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .p{font:500 18px system-ui,-apple-system,Segoe UI,sans-serif;fill:#536577}
+    .box{fill:#fff;stroke:#d8e0e8;stroke-width:2}
+    .allow{fill:#ecf8ef;stroke:#6fcf97;stroke-width:2}
+    .ask{fill:#fff8e8;stroke:#f2b45f;stroke-width:2}
+    .block{fill:#fff0f0;stroke:#ef767a;stroke-width:2}
+    .t{font:700 22px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .s{font:500 16px system-ui,-apple-system,Segoe UI,sans-serif;fill:#536577}
+  </style>
+  <text x="54" y="62" class="h">Policy Gates Before Agent Action</text>
+  <text x="54" y="96" class="p">The profile makes risky work explicit before an agent touches a copied workspace.</text>
+  <rect x="70" y="150" width="290" height="210" rx="14" class="allow"/>
+  <text x="108" y="206" class="t">Auto-Allowed</text>
+  <text x="108" y="246" class="s">read fixture files</text>
+  <text x="108" y="276" class="s">write copied workspace</text>
+  <text x="108" y="306" class="s">run declared tests</text>
+  <rect x="455" y="150" width="290" height="210" rx="14" class="ask"/>
+  <text x="493" y="206" class="t">Needs Approval</text>
+  <text x="493" y="246" class="s">install packages</text>
+  <text x="493" y="276" class="s">external network call</text>
+  <text x="493" y="306" class="s">expand write scope</text>
+  <rect x="840" y="150" width="290" height="210" rx="14" class="block"/>
+  <text x="878" y="206" class="t">Blocked</text>
+  <text x="878" y="246" class="s">read secrets</text>
+  <text x="878" y="276" class="s">deploy or push git</text>
+  <text x="878" y="306" class="s">mutate production config</text>
+</svg>

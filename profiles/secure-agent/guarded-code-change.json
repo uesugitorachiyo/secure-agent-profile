@@ -1,0 +1,24 @@
+{
+  "schema": "ao-operator/profile/v1",
+  "profile": "secure-agent:guarded-code-change",
+  "display_name": "Secure Agent: Guarded Code Change",
+  "description": "Policy-gated coding run with evidence pack output.",
+  "policy": "policy/secure-agent.policy.yaml",
+  "evidence_pack": {"required": true, "template": "secure-agent"},
+  "inputs": {
+    "brief": {"required": true, "type": "path"},
+    "repo": {"required": true, "type": "path"},
+    "dry_run": {"required": false, "type": "boolean", "default": false}
+  },
+  "roles": [
+    {"id": "intake", "skill": "skills/secure-agent/intake.md", "deps": [], "host_tags": ["repo-safe"]},
+    {"id": "repo-scan", "skill": "skills/secure-agent/repo-scan.md", "deps": ["intake"], "host_tags": ["repo-safe"]},
+    {"id": "scope-classify", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["repo-scan"], "host_tags": ["repo-safe"]},
+    {"id": "risk-classify", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["scope-classify"], "host_tags": ["repo-safe"]},
+    {"id": "guarded-plan", "skill": "skills/secure-agent/guarded-plan.md", "deps": ["risk-classify"], "host_tags": ["live-codex"]},
+    {"id": "implementation", "skill": "skills/secure-agent/implementation.md", "deps": ["guarded-plan"], "host_tags": ["live-codex"]},
+    {"id": "verifier-run", "skill": "skills/secure-agent/closure.md", "deps": ["implementation"], "host_tags": ["repo-safe"]},
+    {"id": "security-review", "skill": "skills/secure-agent/security-review.md", "deps": ["verifier-run"], "host_tags": ["repo-safe"]},
+    {"id": "closure", "skill": "skills/secure-agent/closure.md", "deps": ["security-review"], "host_tags": ["repo-safe"]}
+  ]
+}

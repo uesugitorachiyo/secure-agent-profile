@@ -1,0 +1,11 @@
+{
+  "blocked_patterns": [],
+  "copied_files": 59,
+  "generated_at": "2026-05-14T14:46:01+00:00",
+  "public_commit_identity": "AO Runtime <270548076+uesugitorachiyo@users.noreply.github.com>",
+  "public_repo": "secure-agent-profile",
+  "schema": "secure-agent-profile/public-clean-export/v1",
+  "skipped_files": 1842,
+  "source_repo": "redacted-private-provenance",
+  "verdict": "PASS"
+}

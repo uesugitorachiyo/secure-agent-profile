@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Agent from brief to safe patch</title>
+  <desc id="desc">Secure Agent turns a coding brief into risk classification, guarded implementation, review, and replayable evidence.</desc>
+  <rect width="980" height="420" fill="#fffffb"/>
+  <rect x="34" y="34" width="912" height="352" rx="16" fill="#f5f7f4" stroke="#202426" stroke-width="2"/>
+  <text x="70" y="88" font-family="Georgia, serif" font-size="31" font-weight="700" fill="#161718">A coding brief becomes a safe patch lane</text>
+  <text x="72" y="122" font-family="Avenir Next, Segoe UI, sans-serif" font-size="16" fill="#4d565a">The profile keeps agent work bounded before it touches real source code.</text>
+  <rect x="78" y="178" width="150" height="84" rx="12" fill="#ffffff" stroke="#d5dadd"/>
+  <text x="104" y="212" font-family="Avenir Next, Segoe UI, sans-serif" font-size="17" font-weight="800" fill="#1f5f7a">Brief</text>
+  <text x="104" y="238" font-family="Avenir Next, Segoe UI, sans-serif" font-size="14" fill="#303537">scope + repo</text>
+  <rect x="285" y="178" width="150" height="84" rx="12" fill="#ffffff" stroke="#d5dadd"/>
+  <text x="311" y="212" font-family="Avenir Next, Segoe UI, sans-serif" font-size="17" font-weight="800" fill="#a23b2a">Risk gate</text>
+  <text x="311" y="238" font-family="Avenir Next, Segoe UI, sans-serif" font-size="14" fill="#303537">deny / approve</text>
+  <rect x="492" y="178" width="150" height="84" rx="12" fill="#ffffff" stroke="#d5dadd"/>
+  <text x="518" y="212" font-family="Avenir Next, Segoe UI, sans-serif" font-size="17" font-weight="800" fill="#2d6a4f">Patch</text>
+  <text x="518" y="238" font-family="Avenir Next, Segoe UI, sans-serif" font-size="14" fill="#303537">isolated copy</text>
+  <rect x="699" y="178" width="180" height="84" rx="12" fill="#161718"/>
+  <text x="725" y="212" font-family="Avenir Next, Segoe UI, sans-serif" font-size="17" font-weight="800" fill="#ffffff">Evidence</text>
+  <text x="725" y="238" font-family="Avenir Next, Segoe UI, sans-serif" font-size="14" fill="#dce4df">verify + replay</text>
+  <path d="M228 220 H285" stroke="#202426" stroke-width="2"/>
+  <path d="M435 220 H492" stroke="#202426" stroke-width="2"/>
+  <path d="M642 220 H699" stroke="#202426" stroke-width="2"/>
+</svg>

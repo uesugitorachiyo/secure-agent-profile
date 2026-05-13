@@ -1,0 +1,17 @@
+{
+  "schema": "ao-operator/profile/v1",
+  "profile": "secure-agent:dependency-review",
+  "display_name": "Secure Agent: Dependency Review",
+  "description": "Read-mostly dependency and package-risk review with evidence pack output.",
+  "policy": "policy/secure-agent.policy.yaml",
+  "evidence_pack": {"required": true, "template": "secure-agent"},
+  "inputs": {"brief": {"required": true, "type": "path"}, "repo": {"required": true, "type": "path"}},
+  "roles": [
+    {"id": "intake", "skill": "skills/secure-agent/intake.md", "deps": [], "host_tags": ["repo-safe"]},
+    {"id": "manifest-discovery", "skill": "skills/secure-agent/repo-scan.md", "deps": ["intake"], "host_tags": ["repo-safe"]},
+    {"id": "dependency-diff", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["manifest-discovery"], "host_tags": ["repo-safe"]},
+    {"id": "package-risk-classify", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["dependency-diff"], "host_tags": ["repo-safe"]},
+    {"id": "lockfile-check", "skill": "skills/secure-agent/security-review.md", "deps": ["package-risk-classify"], "host_tags": ["repo-safe"]},
+    {"id": "dependency-review-report", "skill": "skills/secure-agent/closure.md", "deps": ["lockfile-check"], "host_tags": ["repo-safe"]}
+  ]
+}

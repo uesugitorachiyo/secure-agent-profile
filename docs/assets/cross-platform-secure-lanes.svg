@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Agent Profile cross-platform lanes</title>
+  <desc id="desc">Secure Agent Profile can split guarded coding checks across Ubuntu, macOS, and native Windows lanes.</desc>
+  <rect width="1200" height="500" fill="#fbfcfd"/>
+  <style>
+    .h{font:700 36px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .p{font:500 18px system-ui,-apple-system,Segoe UI,sans-serif;fill:#526679}
+    .box{fill:#fff;stroke:#d7e2ec;stroke-width:2}
+    .ok{fill:#effbea;stroke:#91dd86;stroke-width:2}
+    .warn{fill:#fff7e8;stroke:#f1b35f;stroke-width:2}
+    .t{font:700 20px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .s{font:500 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#536577}
+  </style>
+  <text x="54" y="66" class="h">Cross-Platform Secure Coding Lanes</text>
+  <text x="54" y="100" class="p">Use the host that can actually see the risk, then return evidence to one profile run.</text>
+  <rect x="70" y="160" width="300" height="210" rx="14" class="ok"/>
+  <text x="112" y="216" class="t">Ubuntu Lane</text>
+  <text x="112" y="252" class="s">dependency review</text>
+  <text x="112" y="280" class="s">service tests</text>
+  <text x="112" y="308" class="s">release packaging</text>
+  <rect x="450" y="160" width="300" height="210" rx="14" class="box"/>
+  <text x="492" y="216" class="t">macOS Lane</text>
+  <text x="492" y="252" class="s">launchd behavior</text>
+  <text x="492" y="280" class="s">Keychain assumptions</text>
+  <text x="492" y="308" class="s">Safari/WebKit checks</text>
+  <rect x="830" y="160" width="300" height="210" rx="14" class="warn"/>
+  <text x="872" y="216" class="t">Windows Lane</text>
+  <text x="872" y="252" class="s">PowerShell risk</text>
+  <text x="872" y="280" class="s">Scheduled Task install</text>
+  <text x="872" y="308" class="s">native path behavior</text>
+</svg>

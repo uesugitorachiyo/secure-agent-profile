@@ -1,0 +1,17 @@
+{
+  "schema": "ao-operator/profile/v1",
+  "profile": "secure-agent:pr-evidence",
+  "display_name": "Secure Agent: PR Evidence Pack",
+  "description": "Read-only PR/diff evidence pack for security and review handoff.",
+  "policy": "policy/secure-agent.policy.yaml",
+  "evidence_pack": {"required": true, "template": "secure-agent"},
+  "inputs": {"brief": {"required": true, "type": "path"}, "repo": {"required": true, "type": "path"}},
+  "roles": [
+    {"id": "intake", "skill": "skills/secure-agent/intake.md", "deps": [], "host_tags": ["repo-safe"]},
+    {"id": "diff-collect", "skill": "skills/secure-agent/repo-scan.md", "deps": ["intake"], "host_tags": ["repo-safe"]},
+    {"id": "changed-file-classify", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["diff-collect"], "host_tags": ["repo-safe"]},
+    {"id": "test-discovery", "skill": "skills/secure-agent/repo-scan.md", "deps": ["changed-file-classify"], "host_tags": ["repo-safe"]},
+    {"id": "risk-report", "skill": "skills/secure-agent/risk-classifier.md", "deps": ["test-discovery"], "host_tags": ["repo-safe"]},
+    {"id": "review-summary", "skill": "skills/secure-agent/security-review.md", "deps": ["risk-report"], "host_tags": ["repo-safe"]}
+  ]
+}

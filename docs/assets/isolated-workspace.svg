@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Secure Agent isolated workspace</title>
+  <desc id="desc">The secure agent profile copies a workspace, blocks unsafe actions, runs tests, and exports evidence without mutating the source repository.</desc>
+  <rect width="1200" height="500" fill="#fbfcfd"/>
+  <defs>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#4f7d5a"/>
+    </marker>
+  </defs>
+  <style>
+    .h{font:700 36px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .p{font:500 18px system-ui,-apple-system,Segoe UI,sans-serif;fill:#526679}
+    .box{fill:#fff;stroke:#d7e2ec;stroke-width:2}
+    .copy{fill:#effbea;stroke:#91dd86;stroke-width:2}
+    .block{fill:#fff0f0;stroke:#ef767a;stroke-width:2}
+    .t{font:700 21px system-ui,-apple-system,Segoe UI,sans-serif;fill:#17212b}
+    .s{font:500 15px system-ui,-apple-system,Segoe UI,sans-serif;fill:#536577}
+    .line{stroke:#4f7d5a;stroke-width:4;fill:none;marker-end:url(#a)}
+  </style>
+  <text x="54" y="66" class="h">Isolated Workspace Boundary</text>
+  <text x="54" y="100" class="p">Agent work happens in a copy, so the source repo is inspected but not mutated by default.</text>
+  <rect x="74" y="170" width="210" height="150" rx="12" class="box"/>
+  <text x="108" y="225" class="t">Source Repo</text>
+  <text x="108" y="258" class="s">read allowed files</text>
+  <text x="108" y="286" class="s">never direct mutate</text>
+  <path class="line" d="M294 245 H370"/>
+  <rect x="390" y="146" width="250" height="198" rx="12" class="copy"/>
+  <text x="426" y="205" class="t">Copied Workspace</text>
+  <text x="426" y="238" class="s">patch</text>
+  <text x="426" y="266" class="s">run tests</text>
+  <text x="426" y="294" class="s">collect artifacts</text>
+  <path class="line" d="M650 245 H730"/>
+  <rect x="750" y="170" width="190" height="150" rx="12" class="block"/>
+  <text x="782" y="225" class="t">Blocked</text>
+  <text x="782" y="258" class="s">secrets</text>
+  <text x="782" y="286" class="s">deploy / git push</text>
+  <path class="line" d="M950 245 H1030"/>
+  <rect x="1050" y="170" width="110" height="150" rx="12" class="box"/>
+  <text x="1072" y="225" class="t">Pack</text>
+  <text x="1070" y="258" class="s">verify</text>
+</svg>

@@ -1,0 +1,54 @@
+schema: ao-policy/secure-agent/v1
+default: deny
+profile: secure-agent
+version: 0.1.0
+actions:
+  shell_command:
+    default: deny
+    allow:
+      - "python -m pytest tests/test_math_utils.py"
+      - "git status"
+      - "git diff"
+    approval_required:
+      - "pip install"
+      - "npm install"
+      - "cargo fetch"
+      - "curl"
+      - "wget"
+    blocked:
+      - "sudo"
+      - "rm -rf"
+      - "kubectl"
+      - "terraform apply"
+file_scopes:
+  secret_files:
+    verdict: blocked
+    patterns: [".env", "*.pem", "*.key", "secrets/**"]
+  production_config:
+    verdict: blocked
+    patterns: ["config/production.yaml"]
+  sensitive_project_files:
+    verdict: approval_required
+    patterns: [".github/workflows/**", "auth/**", "security/**", "billing/**", "migrations/**"]
+command_classes:
+  test: allow
+  repo_inspection: allow
+  install: approval_required
+  network: approval_required
+  deploy: blocked
+network:
+  default: deny
+  allowlist:
+    - host: "localhost"
+      reason: "local test services"
+    - host: "127.0.0.1"
+      reason: "local test services"
+  approval_required: ["pypi.org", "registry.npmjs.org", "crates.io"]
+  blocked_patterns: ["*.pastebin.com", "*.requestbin.com", "*.webhook.site"]
+approvals:
+  risky_changes: operator
+  auth_security_changes: security
+evidence:
+  required: true
+  signature: Ed25519
+  replay: required

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure-agent-profile"
+version = "0.1.0"
+description = "AO Runtime Secure Agent Profile with policy-gated coding runs and signed evidence packs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT OR Apache-2.0"
+dependencies = []
+
+[project.scripts]
+sap = "secure_agent_profile.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
